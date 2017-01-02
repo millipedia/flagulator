@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Flag you later.">
+
+<title>flag you later</title>
+
+<link rel="stylesheet" href="lib/mdl/material.min.css">
+<link rel="stylesheet" href="lib/mdl-modal/mdl-jquery-modal-dialog.css">
+<link rel="stylesheet" href="lib/material-design-iconic-font/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="css/flagulator.css">
+
+
+</head>
+<body>
+<div class="content">
+<div class="wrapper">
+
+  <!-- Right aligned menu below button -->
+<button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="zmdi zmdi-home zmdi-more-vert"></i>
+</button>
+  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-right">
+        <li class="mdl-menu__item fl-show-howto fl-show-page" data-pagetoshow="howto">How to play</li>
+        <li class="mdl-menu__item fl-show-about fl-show-page" data-pagetoshow="about">About</li>
+  </ul>
+</div>
+
+<h1>Flagulator</h1>
+<form class="pure-form">
+    <fieldset>
+        <input id="fl-typeahead" class="mdl-textfield__input" data-list="#fl-countries" placeholder="Start typing the name of the country ..." style="width:100%;"/>
+    </fieldset>
+</form>
+
+<div class="flag-frame-table">
+  <div class="flag-frame-cell">
+    <div id="flag-frame" class="flag-flag">
+        <!-- MDL Spinner Component -->
+      <div class="mdl-spinner mdl-js-spinner is-active"></div>
+      <img id="flag-pic" src="flags/gb.svg" class="flag-pic" style="display:none;">
+    </div>
+  </div>
+</div>
+
+
+<div class="pure-u-1-3 text-center" >
+
+  <div>
+    <span class="flag-count-container">
+      <span id="flag-count"></span> of <span id="flag-total"></span>
+    </span>
+  </div>
+
+  <a href="#" class="fl-show-hint mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Hint</a>
+
+  <a href="#" class="fl-show-info mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Answer</a>
+
+  <a href="#" class="fl-skip mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Skip</a>
+
+<!--
+  <a href="#" id="new-country" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Next flag</a>
+-->
+</div>
+
+<div style="font-size:20px;padding:20px 0 10px 0;text-align:center;" id="user-score" class="dark-grey"></div>
+<div style="font-size:14px;padding:10px;text-align:center;" id="user-best" class="dark-grey"></div>
+
+<div class="pure-menu pure-menu-scrollable custom-restricted" style="display:none">
+<ul id="fl-countries" class="pure-menu-list" data-role="listview" data-autofirst><!-- loaded from json --></ul>
+</div>
+
+<div id="page-about" class="page-hidden">
+  <p>The Flagulator started life as a training tool for the 2016 great New Year's Eve Flag Off between Kitty and Simon. </p>
+  <h3>The Data</h3>
+  <p>The country data was taken from <a href="http://data.okfn.org/data/core/country-codes">the country codes dataset</a> provided by <a href="http://www.okfn.org/">Open Knowledge Country</a> (but tweaked in the odd place by us).</p>
+  <p>The flag images are from <a href="https://commons.wikimedia.org/wiki/Category:SVG_flags_by_country">Wikimedia</a>.</p>
+  <h3>The code</h3>
+  <p>The Flagulator source code is available on <a href="https://github.com/millipedia/flagulator"> Github</a>. It makes use of JQuery and the <a href="https://getmdl.io/">Material Design Lite</a> css framework.</p>
+  <p>The native apps were created using Cordova.</p>
+  <p>We are <a href="http://www.millipedia.co.uk/">millipedia</a></p>
+
+</div>
+
+
+<div id="page-howto" class="page-hidden">
+  <p>Start typing into the text field at the top of the page to show a list of countries. Select your choice from the list by tapping it.</p>
+  <p>You can get a clue to the country name by clicking on the <em>Hint</em> button. Each time you click on the <em>Hint</em> button for a particular flag you will see another letter in the country name.</p>
+  <h3>Scoring</h3>
+  <p>If you guess a flag correctly without asking for a hint you score one point.<p>
+  <p>If you ask for a hint you don't get a point but you keep your run intact. If you guess a flag incorrectly then your run is set back to zero.</p>
+  <p>You can skip questions without changing your score.</p>
+
+</div>
+
+
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="lib/mdl/material.min.js"></script>
+<script src="lib/mdl-modal/mdl-jquery-modal-dialog.js"></script>
+<script src="lib/typeahead.bundle.js"></script>
+<script src="js/flagulator.js"></script>
+<script src="cordova.js"></script>
+
+</body>
+</html>

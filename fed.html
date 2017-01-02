@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Flag you later.">
+
+<title>flag you later</title>
+
+<link rel="stylesheet" href="lib/mdl/material.min.css">
+<link rel="stylesheet" href="lib/mdl-modal/mdl-jquery-modal-dialog.css">
+<link rel="stylesheet" href="lib/material-design-iconic-font/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="css/flagulator.css">
+
+
+</head>
+<body>
+<div class="content">
+
+
+
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Flagulator</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+<i class="zmdi zmdi-flower-alt zmdi-hc-2x"></i>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Title</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content flag-content">
+
+<form class="pure-form">
+    <fieldset>
+        <input id="fl-typeahead" class="mdl-textfield__input" data-list="#fl-countries" placeholder="Start typing the name of the country ..." style="width:100%;"/>
+    </fieldset>
+</form>
+
+<div id="flag-frame" class="flag-flag">
+<img id="flag-pic" src="flags/gb.svg" class="flag-pic" >
+</div>
+
+
+<div class="pure-u-1-3 text-center" >
+
+  <div>
+    <span class="flag-count-container">
+      <span id="flag-count"></span> of <span id="flag-total"></span>
+    </span>
+  </div>
+
+  <a href="#" class="fl-show-info mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">I give up</a>
+
+  <a href="#" class="fl-show-hint mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Hint</a>
+
+
+
+  <a href="#" id="new-country" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Next flag</a>
+</div>
+
+<div style="color:#ddd;font-size:20px;padding:20px 0 10px 0;text-align:center;" id="user-score"></div>
+<div style="color:#ccc;font-size:14px;padding:10px;text-align:center;" id="user-best"></div>
+
+<div class="pure-menu pure-menu-scrollable custom-restricted" style="display:none">
+<ul id="fl-countries" class="pure-menu-list" data-role="listview" data-autofirst><!-- loaded from json --></ul>
+</div>
+</main>
+</div>
+
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="lib/mdl/material.min.js"></script>
+<script src="lib/mdl-modal/mdl-jquery-modal-dialog.js"></script>
+<script src="lib/typeahead.bundle.js"></script>
+<script src="js/flagulator.js"></script>
+<script src="cordova.js"></script>
+
+</body>
+</html>
